@@ -1,1 +1,1 @@
-# householding-account
+# household-accounts
