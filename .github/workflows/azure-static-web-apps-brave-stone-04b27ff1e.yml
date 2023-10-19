@@ -37,3 +37,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "./dist/packages/client" # Adjust this to match your build output directory
+          output_location: 'dist/packages/client'
+          app_build_command: 'npm run build-client'
