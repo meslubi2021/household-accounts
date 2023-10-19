@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js 16.x
+      - name: Set up Node.js 18.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install PNPM
         run: |
@@ -26,11 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        working-directory: ./dist/packages/client
+        working-directory: ./packages/client
 
       - name: Build the Next.js app
         run: pnpm run build-client
-        working-directory: ./dist/packages/client
+        working-directory: ./packages/client
 
       - name: Deploy to Azure Static Web Apps
         uses: azure/static-web-apps-deploy@v1
@@ -40,4 +40,4 @@ jobs:
           action: "upload"
           app_location: "./dist/packages/client" # Adjust this to match your build output directory
           output_location: 'dist/packages/client'
-          # app_build_command: 'pnpm run build-client'
+          app_build_command: 'pnpm run build-client'
