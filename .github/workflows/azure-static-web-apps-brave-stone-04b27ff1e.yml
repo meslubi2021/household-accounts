@@ -26,9 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+        working-directory: ./dist/packages/client
 
       - name: Build the Next.js app
         run: pnpm run build-client
+        working-directory: ./dist/packages/client
 
       - name: Deploy to Azure Static Web Apps
         uses: azure/static-web-apps-deploy@v1
@@ -38,4 +40,4 @@ jobs:
           action: "upload"
           app_location: "./dist/packages/client" # Adjust this to match your build output directory
           output_location: 'dist/packages/client'
-          app_build_command: 'pnpm run build-client'
+          # app_build_command: 'pnpm run build-client'
