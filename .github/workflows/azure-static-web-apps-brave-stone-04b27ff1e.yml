@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Build the Next.js app
-        run: pnpm run build
+        run: pnpm run build-client
 
       - name: Deploy to Azure Static Web Apps
         uses: azure/static-web-apps-deploy@v1
