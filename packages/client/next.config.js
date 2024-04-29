@@ -11,10 +11,6 @@ const nextConfig = {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr
     svgr: false,
-  },
-  i18n: {
-    defaultLocale: 'en-US',
-    locales: ['en-US', 'ko']
   }
 };
 
