@@ -6,21 +6,35 @@
       "inputs": ["production", "^production"],
       "cache": true
     },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "cache": true
-    },
     "e2e": {
       "inputs": ["default", "^production"],
       "cache": true
     },
-    "lint": {
+    "@nx/jest:jest": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/eslint:lint": {
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore"
       ],
       "cache": true
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -52,5 +66,6 @@
       }
     }
   },
-  "nxCloudAccessToken": "MjA3MTE4MzItZWUyOS00NTZkLWIzNTUtZTQxNGJjY2ZkYjkzfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "MjA3MTE4MzItZWUyOS00NTZkLWIzNTUtZTQxNGJjY2ZkYjkzfHJlYWQtd3JpdGU=",
+  "useInferencePlugins": false
 }
