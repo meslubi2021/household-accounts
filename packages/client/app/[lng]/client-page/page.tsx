@@ -8,16 +8,14 @@ import { usePathname } from 'next/navigation';
 
 export default function Page({ params: { lng } }:any) {
   const { t } = useTranslation(lng, 'client-page')
-  const [counter, setCounter] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
       <h1>{t('title')}</h1>
-      <p>{t('counter', { count: counter })}</p>
-      <div>
-        <button onClick={() => setCounter(Math.max(0, counter - 1))}>-</button>
-        <button onClick={() => setCounter(Math.min(10, counter + 1))}>+</button>
-      </div>
       <Link href={`/${lng}`}>
         <button type="button">
           {t('back-to-home')}

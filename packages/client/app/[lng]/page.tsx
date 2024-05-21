@@ -4,7 +4,8 @@ import styles from './page.module.scss';
 import { Footer } from './components/Footer';
 
 export default async function Index({ params: { lng }} : any) {
-  const { t } = await useTranslation(lng, 'intro');
+  const { t } = await useTranslation(lng, 'intro');  
+
   /*
    * Replace the elements below with your own.
    *
