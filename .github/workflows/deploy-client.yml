@@ -27,6 +27,9 @@ jobs:
           pnpm run build-client
 
       - name: List build directory contents (debugging step)
+        run: ls -R /
+
+      - name: List build directory contents (debugging step)
         run: ls -R /dist
 
       - name: List build directory contents (debugging step)
