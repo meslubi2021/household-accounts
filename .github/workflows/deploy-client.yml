@@ -27,6 +27,15 @@ jobs:
           pnpm run build-client
 
       - name: List build directory contents (debugging step)
+        run: ls -R /dist
+
+      - name: List build directory contents (debugging step)
+        run: ls -R /dist/packages
+
+      - name: List build directory contents (debugging step)
+        run: ls -R /dist/packages/client
+
+      - name: List build directory contents (debugging step)
         run: ls -R /dist/packages/client/.next
 
       - name: Deploy to Azure Static Web Apps
