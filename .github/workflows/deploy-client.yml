@@ -27,7 +27,7 @@ jobs:
           pnpm run build-client
 
       - name: List build directory contents (debugging step)
-        run: ls -R .next
+        run: ls -R /dist/packages/client/.next
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
