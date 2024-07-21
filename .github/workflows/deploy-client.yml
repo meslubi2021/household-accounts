@@ -26,25 +26,13 @@ jobs:
           pnpm install
           pnpm run build-client
 
-      - name: List build directory contents (debugging step)
-        run: ls -R dist
-
-      - name: List build directory contents (debugging step)
-        run: ls -R dist/packages
-
-      - name: List build directory contents (debugging step)
-        run: ls -R dist/packages/client
-
-      # - name: List build directory contents (debugging step)
-      #   run: ls -R /dist/packages/client/.next
-
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_GROUND_0CF65891E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_location: "/dist/packages/client/.next"          
+          app_location: "dist/packages/client"          
           skip_app_build: true
           skip_api_build: true
           apiRuntime: '18'
