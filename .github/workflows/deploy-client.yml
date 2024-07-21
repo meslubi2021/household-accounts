@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: pnpm install, build, and test
+      - name: pnpm install, build
         run: |
           npm install -g pnpm
           pnpm install
@@ -37,7 +37,7 @@ jobs:
           action: "upload"
           app_location: "/"
           output_location: "dist/packages/client"
-          api_location: "api"
+          api_location: ""
           skip_app_build: true
           skip_api_build: true
   # build_and_deploy_job:
