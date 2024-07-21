@@ -3,8 +3,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": true
+      "inputs": ["production", "^production"]
     },
     "e2e": {
       "inputs": ["default", "^production"],
