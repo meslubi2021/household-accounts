@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nx serve client",
     "build": "nx build",
-    "build-client": "nx build client",
+    "build-client": "nx build client --skip-nx-cache",
     "nx-check-migrate": "nx migrate latest",
     "nx-run-migrate": "nx migrate --run-migrations"
   },
