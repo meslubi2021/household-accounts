@@ -15,11 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: pnpm install, build
+      - name: npm install, build
         run: |
-          npm install -g pnpm
-          pnpm install
-          pnpm run build-client
+          npm install
+          npm run build-client
 
       - name: Check build directory size
         run: du -sh dist/packages/client
