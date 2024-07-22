@@ -28,8 +28,8 @@ jobs:
           pnpm run build-client
 
       - name: Check build directory size
-        run: du -sh packages/client
-        
+        run: du -sh dist/packages/client
+
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
