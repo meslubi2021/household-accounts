@@ -42,4 +42,5 @@ jobs:
           output_location: "" # Built app content directory - optional
           skip_app_build: true
           skip_api_build: true
+          build_timeout_in_minutes: 60
           apiRuntime: '18'
