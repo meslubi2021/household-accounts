@@ -20,6 +20,11 @@ jobs:
           npm install
           npm run build-client
 
+      - name: Install dependencies in /dist/packages/client
+        run: |
+          cd /dist/packages/client
+          npm install
+          
       - name: Check build directory size
         run: du -sh dist/packages/client
 
