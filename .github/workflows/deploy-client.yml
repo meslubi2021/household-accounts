@@ -36,8 +36,8 @@ jobs:
       #     archiveType: 'zip'
       #     archiveFile: 'dist/packages/client/$(Build.BuildId).zip'
 
-      # - name: List build directory contents (debugging step)
-      #   run: ls -R dist/packages/client
+      - name: List build directory contents (debugging step)
+        run: ls -R dist/packages/client
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
