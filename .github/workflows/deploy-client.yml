@@ -20,11 +20,11 @@ jobs:
           npm install
           npm run build-client
 
-      - name: Install dependencies in /dist/packages/client
-        run: |
-          cd /dist/packages/client
-          npm install
-          
+      # - name: Install dependencies in dist/packages/client
+      #   run: |
+      #     cd dist/packages/client
+      #     npm install
+
       - name: Check build directory size
         run: du -sh dist/packages/client
 
@@ -38,7 +38,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_GROUND_0CF65891E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_location: "/dist/packages/client/"
+          app_location: "dist/packages/client"
           api_location: "" # Api source code path - optional
           output_location: ".next" # Built app content directory - optional
           skip_app_build: true
